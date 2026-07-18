@@ -58,11 +58,7 @@ export default function VideoMeetComponent() {
 
     let [videos, setVideos] = useState([])
 
-    // TODO
-    // if(isChrome() === false) {
-
-
-    // }
+    
 
     useEffect(() => {
         console.log("HELLO")
@@ -523,8 +519,13 @@ export default function VideoMeetComponent() {
                     </div>
 
 
-                    <video className={styles.meetUserVideo} ref={localVideoref} autoPlay muted></video>
-
+                   
+                     <video
+    className={`${styles.meetUserVideo} ${showModal ? styles.chatOpen : ""}`}
+    ref={localVideoref}
+    autoPlay
+    muted
+/>
                     <div className={styles.conferenceView}>
                         {videos.map((video) => (
                             <div key={video.socketId}>
